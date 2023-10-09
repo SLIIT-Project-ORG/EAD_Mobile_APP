@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/images"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/my_primary"
+        android:alpha="0.6"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:text="TRAIN DETAILS"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        />
+
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="350dp"
+
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+
+
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+
+
+
+        app:cardCornerRadius="40dp"
+
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/baseline_directions_railway_filled_24"
+                android:text=" Train Name:"
+
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:alpha="0.7"
+                android:text=" Time:"
+                android:drawableStart="@drawable/baseline_pending_actions_24"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerVertical="true"
+                    android:alpha="0.7"
+                    android:text=" From:"
+                    android:drawableStart="@drawable/baseline_edit_location_alt_24"
+                    android:textSize="20dp"
+
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:alpha="0.7"
+                    android:text=" To:"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="70dp"
+                    android:textSize="20dp"
+
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
