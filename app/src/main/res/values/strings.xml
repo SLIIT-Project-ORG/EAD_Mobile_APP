@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">EAD_Mobile_APP</string>
+    <string name="app_name">My Application</string>
+    <string name="loginPassword" />
 </resources>
