@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-
+                android:id="@+id/firstName"
                 />
 
             <TextView
@@ -71,10 +71,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-
+                android:id="@+id/lastName"
                 />
-
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,15 +80,14 @@
                 android:text= "User Name"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:alpha="0.7"/>
+                android:alpha="0.7"
+                />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-
+                android:id="@+id/userName"
                 />
-
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -103,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-
+                android:id="@+id/mobileNo"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -117,6 +114,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:drawableEnd="@drawable/baseline_email_24"
+                android:id="@+id/email"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -128,8 +126,23 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 android:drawableEnd="@drawable/baseline_remove_red_eye_24"
+                android:id="@+id/password"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "NIC Number"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:alpha="0.7"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/NIC"
                 />
 
             <View
@@ -139,6 +152,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="REGISTER"
+                android:id="@+id/registerBtn"
                 app:cornerRadius="32dp">
 
             </com.google.android.material.button.MaterialButton>
