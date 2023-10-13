@@ -1,18 +1,10 @@
 package com.example.ead_mobile_app.Retrofit;
 
-import com.example.ead_mobile_app.API.Endpoints;
-import com.example.ead_mobile_app.Model.UserCreateRequest;
-import com.example.ead_mobile_app.Model.UserCreateResponse;
-import com.example.ead_mobile_app.Model.UserLoginRequest;
-import com.example.ead_mobile_app.Model.UserLoginResponse;
+import com.example.ead_mobile_app.API.AuthEndpoints;
+import com.example.ead_mobile_app.API.TrainEndpoints;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
-import retrofit2.http.POST;
 
 public class RetrofitClient {
 
@@ -27,15 +19,19 @@ public class RetrofitClient {
                 .build();
     }
 
-    public static synchronized RetrofitClient getInstance(){
-        if (retrofitClient==null){
+    public static synchronized RetrofitClient getInstance() {
+        if (retrofitClient == null) {
             retrofitClient = new RetrofitClient();
         }
         return retrofitClient;
     }
 
-    public Endpoints getEndpoint() {
-        return retrofit.create(Endpoints.class);
+    public AuthEndpoints getEndpoint() {
+        return retrofit.create(AuthEndpoints.class);
+    }
+
+    public TrainEndpoints getEndpoints() {
+        return retrofit.create(TrainEndpoints.class);
     }
 
 }

@@ -42,6 +42,10 @@
 
         >
 
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trainListView"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +65,8 @@
                 android:drawableStart="@drawable/baseline_directions_railway_filled_24"
                 android:text=" Train Name  : "
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/trainDetailsTrainName"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,7 +76,8 @@
                 android:drawableStart="@drawable/baseline_pending_actions_24"
                 android:text=" Capacity     :"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/trainDetailsTrainCapacity"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -81,7 +87,8 @@
                 android:drawableStart="@drawable/baseline_directions_transit_filled_24"
                 android:text=" Type            :"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/trainDetailsType"/>
 
 
         </LinearLayout>

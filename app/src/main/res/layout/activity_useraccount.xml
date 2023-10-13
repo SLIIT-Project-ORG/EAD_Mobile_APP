@@ -48,7 +48,9 @@
                 android:layout_marginBottom="10dp"
                 android:text="Full Name   :    Sachini Rasanga"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/userProfileFullName"
+                />
 
 
             <TextView
@@ -58,7 +60,8 @@
                 android:layout_marginBottom="10dp"
                 android:text="User Name :    sachinirasanga"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/userProfileUsername"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +70,8 @@
                 android:alpha="0.7"
                 android:text="Age              :    24"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/userProfileAge"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -76,7 +80,8 @@
                 android:alpha="0.7"
                 android:text="Email           :    sachi@gmail.com"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/userProfileEmail"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
