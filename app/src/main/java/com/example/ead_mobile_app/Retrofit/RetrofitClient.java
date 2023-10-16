@@ -1,6 +1,7 @@
 package com.example.ead_mobile_app.Retrofit;
 
 import com.example.ead_mobile_app.API.AuthEndpoints;
+import com.example.ead_mobile_app.API.SheduleEndpoints;
 import com.example.ead_mobile_app.API.TrainEndpoints;
 
 import retrofit2.Retrofit;
@@ -33,6 +34,8 @@ public class RetrofitClient {
     public TrainEndpoints getEndpoints() {
         return retrofit.create(TrainEndpoints.class);
     }
+
+    public SheduleEndpoints getAPIEndpoint(){return retrofit.create(SheduleEndpoints.class);}
 
 
 }
