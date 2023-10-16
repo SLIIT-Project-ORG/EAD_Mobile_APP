@@ -32,13 +32,9 @@ public class SheduleActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_train);
+        setContentView(R.layout.activity_shedule);
 
-//        trainNameTextView = findViewById(R.id.sheduleDetailsTrainName);
-//        trainTimeTextView = findViewById(R.id.sheduleDetailsTrainTime);
-//        trainDateTextView = findViewById(R.id.sheduleDetailsDate);
-
-        sheduleListView = findViewById(R.id.trainListView);
+        sheduleListView = findViewById(R.id.sheduleListView);
         sheduleListAdapter = new SheduleListAdapter(this, new ArrayList<Shedule>());
 
         sheduleListView.setAdapter(sheduleListAdapter);

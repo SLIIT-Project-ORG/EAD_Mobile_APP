@@ -40,8 +40,4 @@ public class RetrofitClient {
         return retrofit.create(BookingEndpoints.class);
     }
 
-    public SheduleEndpoints getAPIEndpoint() {
-        return retrofit.create(SheduleEndpoints.class);
-    }
-
 }

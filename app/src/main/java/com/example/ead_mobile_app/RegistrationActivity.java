@@ -12,6 +12,8 @@ import com.example.ead_mobile_app.Model.UserCreateRequest;
 import com.example.ead_mobile_app.Model.UserCreateResponse;
 import com.example.ead_mobile_app.Retrofit.RetrofitClient;
 
+import java.util.logging.Logger;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -95,16 +97,20 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onResponse(Call<UserCreateResponse> call, Response<UserCreateResponse> response) {
                 UserCreateResponse userCreateResponse = response.body();
+                Logger logger = Logger.getLogger("Register Activity");
+                logger.info(userCreateResponse.getMessage());
                 if (response.isSuccessful()) {
-                    Toast.makeText(RegistrationActivity.this,userCreateResponse.getMessage(),Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(RegistrationActivity.this,userCreateResponse.getMessage().toString(),Toast.LENGTH_SHORT).show();
+                    logger.info("Register successful");
+                    logger.info(userCreateResponse.getMessage());
+                    Toast.makeText(RegistrationActivity.this, userCreateResponse.getMessage(), Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(RegistrationActivity.this, userCreateResponse.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<UserCreateResponse> call, Throwable t) {
-                Toast.makeText(RegistrationActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistrationActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 

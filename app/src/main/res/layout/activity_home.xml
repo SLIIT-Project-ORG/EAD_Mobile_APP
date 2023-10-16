@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@color/my_primary" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-20dp"
+        app:cardBackgroundColor="@color/my_secondary"
+        app:cardCornerRadius="28dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:baselineAligned="false"
+                android:layout_marginLeft="30dp"
+                android:text="TICKET BOOKING"
+                android:textSize="30dp"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="40dp">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:baselineAligned="false"
+                android:layout_marginLeft="30dp"
+                android:text="TRAIN DETAILS"
+                android:textSize="30dp"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="20dp">
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:baselineAligned="false"
+                android:layout_marginLeft="30dp"
+                android:text="USER PROFILE"
+                android:textSize="30dp"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp">
+            </com.google.android.material.button.MaterialButton>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
