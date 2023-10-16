@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="20dp"
-        android:text="TRAIN DETAILS"
+        android:text="TRAIN SHEDULE DETAILS"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -28,35 +28,22 @@
     <androidx.cardview.widget.CardView
 
         android:layout_width="350dp"
-
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-
-
         android:layout_marginLeft="30dp"
         android:layout_marginTop="60dp"
-
-
         app:cardCornerRadius="40dp"
-
-
         >
 
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/trainListView"/>
+            android:id="@+id/sheduleListView"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="28dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-        </LinearLayout>
+
+
+
 
 
     </androidx.cardview.widget.CardView>

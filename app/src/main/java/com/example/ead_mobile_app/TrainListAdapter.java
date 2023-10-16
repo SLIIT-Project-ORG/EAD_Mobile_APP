@@ -42,9 +42,9 @@ public class TrainListAdapter extends BaseAdapter {
             view = LayoutInflater.from(context).inflate(R.layout.train_list_item, viewGroup, false);
         }
 
-        TextView trainNameTextView = view.findViewById(R.id.trainDetailsTrainName);
-        TextView trainCapacityTextView = view.findViewById(R.id.trainDetailsTrainCapacity);
-        TextView trainTypeTextView = view.findViewById(R.id.trainDetailsType);
+        TextView trainNameTextView = view.findViewById(R.id.trainNameTextView);
+        TextView trainCapacityTextView = view.findViewById(R.id.trainCapacityTextView);
+        TextView trainTypeTextView = view.findViewById(R.id.trainTypeTextView);
 
         Train train = trainList.get(id);
 

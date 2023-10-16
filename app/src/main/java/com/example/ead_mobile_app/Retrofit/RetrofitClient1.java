@@ -8,36 +8,29 @@ import com.example.ead_mobile_app.API.TrainEndpoints;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitClient {
+public class RetrofitClient1 {
 
-    private static String BASE_URL = "https://ead-rest-api.onrender.com";
-    private static RetrofitClient retrofitClient;
+    private static String BASE_URL = "https://eadbackend.onrender.com";
+    private static RetrofitClient1 retrofitClient;
     private static Retrofit retrofit;
 
-    private RetrofitClient() {
+    private RetrofitClient1() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 
-    public static synchronized RetrofitClient getInstance() {
+    public static synchronized RetrofitClient1 getInstance() {
         if (retrofitClient == null) {
-            retrofitClient = new RetrofitClient();
+            retrofitClient = new RetrofitClient1();
         }
         return retrofitClient;
     }
 
-    public AuthEndpoints getEndpoint() {
-        return retrofit.create(AuthEndpoints.class);
-    }
 
-    public TrainEndpoints getEndpoints() {
-        return retrofit.create(TrainEndpoints.class);
-    }
-
-    public BookingEndpoints gettingEndpoints() {
-        return retrofit.create(BookingEndpoints.class);
+    public SheduleEndpoints getAPIEndpoint() {
+        return retrofit.create(SheduleEndpoints.class);
     }
 
 }

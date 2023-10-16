@@ -1,5 +1,6 @@
 package com.example.ead_mobile_app;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -25,15 +26,16 @@ public class TrainActivity extends AppCompatActivity {
     ListView trainListView;
     TrainListAdapter trainListAdapter;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_train);
 
-        trainNameTextView = findViewById(R.id.trainDetailsTrainName);
-        trainCapacityTextView = findViewById(R.id.trainDetailsTrainCapacity);
-        trainTypeTextView = findViewById(R.id.trainDetailsType);
+        trainNameTextView = findViewById(R.id.trainNameTextView);
+        trainCapacityTextView = findViewById(R.id.trainCapacityTextView);
+        trainTypeTextView = findViewById(R.id.trainTypeTextView);
 
         trainListView = findViewById(R.id.trainListView);
         trainListAdapter = new TrainListAdapter(this, new ArrayList<Train>());

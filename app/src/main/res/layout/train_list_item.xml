@@ -5,15 +5,34 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="28dp"
+        android:padding="16dp"
         tools:ignore="MissingConstraints">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
+<!--        <TextView-->
+<!--            android:id="@+id/trainNameTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Train Name:"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/trainCapacityTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Capacity:"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/trainTypeTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Type:"-->
+<!--            android:textSize="16sp" />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,7 +43,7 @@
             android:text=" Train Name  : "
             android:textSize="18dp"
             android:textStyle="bold"
-            android:id="@+id/trainDetailsTrainName"/>
+            android:id="@+id/trainNameTextView"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +54,7 @@
             android:text=" Capacity     :"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:id="@+id/trainDetailsTrainCapacity"/>
+            android:id="@+id/trainCapacityTextView"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -46,7 +65,7 @@
             android:text=" Type            :"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:id="@+id/trainDetailsType"/>
+            android:id="@+id/trainTypeTextView"/>
 
     </LinearLayout>
 
