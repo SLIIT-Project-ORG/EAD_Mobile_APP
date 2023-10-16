@@ -23,4 +23,6 @@ public interface AuthEndpoints {
     @GET("/users/{id}")
     Call<ApplicationUser> getUserById(@Path("id") String userId);
 
+
+
 }
