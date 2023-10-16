@@ -1,57 +1,67 @@
 package com.example.ead_mobile_app.Model;
 
 public class UserLoginResponse {
-    private Boolean Success;
-    private String AccessToken;
-    private String Email;
-    private String UserId;
-    private String Message;
+    private Boolean success;
+    private String accessToken;
+    private String email;
+    private String userId;
+    private String message;
+    private Integer roleId;
 
-    public UserLoginResponse(Boolean success, String accessToken, String email, String userId, String message) {
-        Success = success;
-        AccessToken = accessToken;
-        Email = email;
-        UserId = userId;
-        Message = message;
+    public UserLoginResponse(Boolean success, String accessToken, String email, String userId, String message, Integer roleId) {
+        this.success = success;
+        this.accessToken = accessToken;
+        this.email = email;
+        this.userId = userId;
+        this.message = message;
+        this.roleId = roleId;
     }
 
     public Boolean getSuccess() {
-        return Success;
+        return success;
     }
 
     public void setSuccess(Boolean success) {
-        Success = success;
+        this.success = success;
     }
 
     public String getAccessToken() {
-        return AccessToken;
+        return accessToken;
     }
 
     public void setAccessToken(String accessToken) {
-        AccessToken = accessToken;
+        this.accessToken = accessToken;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getUserId() {
-        return UserId;
+        return userId;
     }
 
     public void setUserId(String userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public String getMessage() {
-        return Message;
+        return message;
     }
 
     public void setMessage(String message) {
-        Message = message;
+        this.message = message;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }
