@@ -19,7 +19,7 @@
             android:name=".UserAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".BookingActivity"
+            android:name=".SheduleListAdapter"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
