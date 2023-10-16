@@ -1,5 +1,7 @@
 package com.example.ead_mobile_app;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText userNameEditText, passwordEditText;
     Button loginBtn;
@@ -29,53 +31,59 @@ public class LoginActivity extends AppCompatActivity {
         userNameEditText = findViewById(R.id.loginUsername);
         passwordEditText = findViewById(R.id.loginPassword);
 
-//        loginBtn.setOnClickListener(this);
+        loginBtn.setOnClickListener(this);
     }
-//
-//    @Override
-//    public void onClick(View view) {
-//        loginUser();
-//    }
-//
-//    private void loginUser() {
-//
-//        String username = userNameEditText.getText().toString();
-//        String password = passwordEditText.getText().toString();
-//
-//        if (username.isEmpty()) {
-//            userNameEditText.requestFocus();
-//            userNameEditText.setError("username cannot be empty");
-//        }
-//        if (password.isEmpty()) {
-//            passwordEditText.requestFocus();
-//            passwordEditText.setError("password cannot be empty");
-//        }
-//
-//        UserLoginRequest userLoginRequest = new UserLoginRequest(
-//                username, password
-//        );
-//
-//        Call<UserLoginResponse> call = RetrofitClient
-//                .getInstance()
-//                .getEndpoint()
-//                .loginUser(userLoginRequest);
-//
-//        call.enqueue(new Callback<UserLoginResponse>() {
-//            @Override
-//            public void onResponse(Call<UserLoginResponse> call, Response<UserLoginResponse> response) {
-//                UserLoginResponse userLoginResponse = response.body();
-//                if (response.isSuccessful()) {
-//                    Toast.makeText(LoginActivity.this, userLoginResponse.getMessage(), Toast.LENGTH_SHORT).show();
-//                } else {
-//                    Toast.makeText(LoginActivity.this, userLoginResponse.getMessage().toString(), Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<UserLoginResponse> call, Throwable t) {
-//                Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//    }
+    @Override
+    public void onClick(View view) {
+        loginUser();
+    }
+
+    private void loginUser() {
+
+        String username = userNameEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+
+        if (username.isEmpty()) {
+            userNameEditText.requestFocus();
+            userNameEditText.setError("username cannot be empty");
+        }
+        if (password.isEmpty()) {
+            passwordEditText.requestFocus();
+            passwordEditText.setError("password cannot be empty");
+        }
+
+        UserLoginRequest userLoginRequest = new UserLoginRequest(
+                username, password
+        );
+
+        Call<UserLoginResponse> call = RetrofitClient
+                .getInstance()
+                .getEndpoint()
+                .loginUser(userLoginRequest);
+
+        call.enqueue(new Callback<UserLoginResponse>() {
+            @Override
+            public void onResponse(Call<UserLoginResponse> call, Response<UserLoginResponse> response) {
+                UserLoginResponse userLoginResponse = response.body();
+                if (response.isSuccessful()) {
+
+                    SharedPreferences sharedPreferences = getSharedPreferences("user_details", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    String userId = userLoginResponse.getUserId();
+                    editor.putString("userId", userId);
+                    editor.apply();
+
+                    Toast.makeText(LoginActivity.this, userLoginResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, userLoginResponse.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserLoginResponse> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 }
