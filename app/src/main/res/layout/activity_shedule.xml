@@ -40,51 +40,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/sheduleListView"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="28dp">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:alpha="0.7"
-                android:drawableStart="@drawable/baseline_directions_railway_filled_24"
-                android:text=" Train Name  : "
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:id="@+id/sheduleDetailsTrainName"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:alpha="0.7"
-                android:drawableStart="@drawable/baseline_pending_actions_24"
-                android:text=" Time     :"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:id="@+id/sheduleDetailsTrainTime"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:alpha="0.7"
-                android:drawableStart="@drawable/baseline_directions_transit_filled_24"
-                android:text=" Date            :"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:id="@+id/sheduleDetailsDate"/>
 
 
-        </LinearLayout>
+
+
 
 
     </androidx.cardview.widget.CardView>

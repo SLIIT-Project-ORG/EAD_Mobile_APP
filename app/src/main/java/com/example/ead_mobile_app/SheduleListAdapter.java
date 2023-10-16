@@ -40,18 +40,18 @@ public class SheduleListAdapter extends BaseAdapter {
     @Override
     public View getView(int id, View view, ViewGroup viewGroup) {
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.train_list_item, viewGroup, false);
+            view = LayoutInflater.from(context).inflate(R.layout.shedule_list_item, viewGroup, false);
         }
 
-        TextView trainNameTextView = view.findViewById(R.id.sheduleDetailsTrainName);
-        TextView timeTextView = view.findViewById(R.id.sheduleDetailsTrainTime);
-        TextView stationTextView = view.findViewById(R.id.sheduleDetailsDate);
+        TextView trainNameTextView = view.findViewById(R.id.IsheduleDetailsTrainName);
+        TextView timeTextView = view.findViewById(R.id.IsheduleDetailsTrainTime);
+        TextView stationTextView = view.findViewById(R.id.IsheduleDetailsDate);
 
         Shedule shedule = sheduleList.get(id);
 
         trainNameTextView.setText("Train Name: " + shedule.getTrainName());
-        timeTextView.setText("Time: " + shedule.getDepartureTime());
-        stationTextView.setText("Date: " + shedule.getDepartureStation());
+     timeTextView.setText("Time: " + shedule.getDepartureTime());
+       stationTextView.setText("Station: " + shedule.getDepartureStation());
 
         return view;
     }

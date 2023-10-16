@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static String BASE_URL = "https://ead-rest-api.onrender.com";
+    private static String BASE_URL = "https://eadbackend.onrender.com";
     private static RetrofitClient retrofitClient;
     private static Retrofit retrofit;
 

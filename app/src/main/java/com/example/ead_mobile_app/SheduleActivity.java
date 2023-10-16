@@ -33,9 +33,9 @@ public class SheduleActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_train);
 
-        trainNameTextView = findViewById(R.id.sheduleDetailsTrainName);
-        trainTimeTextView = findViewById(R.id.sheduleDetailsTrainTime);
-        trainDateTextView = findViewById(R.id.sheduleDetailsDate);
+//        trainNameTextView = findViewById(R.id.sheduleDetailsTrainName);
+//        trainTimeTextView = findViewById(R.id.sheduleDetailsTrainTime);
+//        trainDateTextView = findViewById(R.id.sheduleDetailsDate);
 
         sheduleListView = findViewById(R.id.trainListView);
         sheduleListAdapter = new SheduleListAdapter(this, new ArrayList<Shedule>());
