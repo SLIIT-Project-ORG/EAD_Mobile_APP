@@ -1,6 +1,7 @@
 package com.example.ead_mobile_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -14,11 +15,13 @@ import com.example.ead_mobile_app.Model.UserLoginRequest;
 import com.example.ead_mobile_app.Model.UserLoginResponse;
 import com.example.ead_mobile_app.Retrofit.RetrofitClient;
 
+import java.util.logging.Logger;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity {
 
     EditText userNameEditText, passwordEditText;
     Button loginBtn;
@@ -30,12 +33,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         userNameEditText = findViewById(R.id.loginUsername);
         passwordEditText = findViewById(R.id.loginPassword);
+        loginBtn = findViewById(R.id.loginBtn);
 
-        loginBtn.setOnClickListener(this);
-    }
-    @Override
-    public void onClick(View view) {
-        loginUser();
+        loginBtn.setOnClickListener(view -> loginUser());
     }
 
     private void loginUser() {
@@ -66,6 +66,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onResponse(Call<UserLoginResponse> call, Response<UserLoginResponse> response) {
                 UserLoginResponse userLoginResponse = response.body();
                 if (response.isSuccessful()) {
+                    Logger logger = Logger.getLogger("Login Activity");
+                    logger.info("Login request success");
+                    logger.info("UserId  : " + userLoginResponse.getUserId());
+                    logger.info("Email   : " + userLoginResponse.getEmail());
+                    logger.info("Message : " + userLoginResponse.getMessage());
+                    logger.info("Success : " + userLoginResponse.getSuccess());
 
                     SharedPreferences sharedPreferences = getSharedPreferences("user_details", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -73,9 +79,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     editor.putString("userId", userId);
                     editor.apply();
 
-                    Toast.makeText(LoginActivity.this, userLoginResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, userLoginResponse.getMessage(), Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);
+                    finish();
+
                 } else {
-                    Toast.makeText(LoginActivity.this, userLoginResponse.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, userLoginResponse.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -84,6 +96,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }

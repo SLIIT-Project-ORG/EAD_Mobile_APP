@@ -1,30 +1,27 @@
 package com.example.ead_mobile_app.Model;
 
 public class UserCreateResponse {
-    private String Message;
-    private boolean Success;
+    private String message;
+    private boolean success;
 
     public UserCreateResponse(String message, boolean success) {
-        this.Message = message;
-        this.Success = success;
-    }
-
-    public UserCreateResponse() {
+        this.message = message;
+        this.success = success;
     }
 
     public String getMessage() {
-        return Message;
+        return message;
     }
 
     public void setMessage(String message) {
-        this.Message = message;
+        this.message = message;
     }
 
     public boolean isSuccess() {
-        return Success;
+        return success;
     }
 
     public void setSuccess(boolean success) {
-        this.Success = success;
+        this.success = success;
     }
 }
