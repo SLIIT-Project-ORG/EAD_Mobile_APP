@@ -13,14 +13,18 @@ package com.example.ead_mobile_app;
         import com.example.ead_mobile_app.Model.CreateBookingResponse;
         import com.example.ead_mobile_app.Retrofit.RetrofitClient;
 
+        import java.text.SimpleDateFormat;
+        import java.util.Date;
+        import java.util.UUID;
+
         import retrofit2.Call;
         import retrofit2.Callback;
         import retrofit2.Response;
 
-public class BookingActivity extends AppCompatActivity  implements View.OnClickListener {
+public class BookingActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText bookingDateTxt, noTicketsTxt;
-    TextView availabilityLbl, costLbl, bookingNoTxt, fromStationTxt, toStationTxt, trainDateTxt, trainTimeTxt,trainClassTxt;
+    EditText noTicketsTxt;
+    TextView bookingDateLbl,availabilityLbl, costLbl, bookingNoTxt, fromStationTxt, toStationTxt, trainDateTxt, trainTimeTxt,trainClassTxt;
     Button btnCheck, btnSubmit;
 
     @Override
@@ -35,13 +39,59 @@ public class BookingActivity extends AppCompatActivity  implements View.OnClickL
         toStationTxt = findViewById(R.id.toStation);
         trainDateTxt = findViewById(R.id.trainDate);
         trainTimeTxt = findViewById(R.id.trainTime);
-        bookingDateTxt = findViewById(R.id.bookingDate);
+        bookingDateLbl = findViewById(R.id.bookingDate);
         noTicketsTxt = findViewById(R.id.noTickets);
         trainClassTxt = findViewById(R.id.trainClass);
         availabilityLbl = findViewById(R.id.availability);
-        costLbl = findViewById(R.id.cost);
+
 
         btnCheck = findViewById(R.id.btnCheck);
+
+        btnSubmit = findViewById(R.id.btnSubmit);
+
+        //Calculate Total Cost
+        btnCheck.setOnClickListener(view -> {
+            costLbl = findViewById(R.id.cost);
+            int trainClass= Integer.parseInt(trainClassTxt.getText().toString());
+            int noTickets = Integer.parseInt(noTicketsTxt.getText().toString());
+            int costTicket=0;
+            if(trainClass==1){
+                 costTicket = noTickets * 700 ;
+            }else if(trainClass==2){
+                 costTicket = noTickets * 450;
+            }else if((trainClass==3)){
+                 costTicket = noTickets * 350;
+            }
+            costLbl.setText(String.valueOf(costTicket));
+            //Check Availability
+            availabilityLbl.setText("Available");
+
+        });
+
+        //Current Time-Booking Date
+        TextView textView=findViewById(R.id.bookingDate);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm ");
+        String currentDateandTime = sdf.format(new Date());
+        bookingDateLbl.setText(currentDateandTime);//
+
+
+
+
+            UUID randomUUID = UUID.randomUUID();
+            long mostSignificantBits = randomUUID.getMostSignificantBits();
+
+            // Mask to get only the last 16 bits (4 hexadecimal digits)
+            long maskedBits = mostSignificantBits & 0xFFFF;
+
+            // Format the masked bits as a 4-digit hexadecimal string
+            String uuidString = String.format("%04X", maskedBits);
+
+        bookingNoTxt.setText(String.valueOf(uuidString));
+
+
+
+//        String uniqueId = UUID.randomUUID().toString();
+//        bookingNoTxt.setText(String.valueOf(uniqueId));
 
         btnSubmit.setOnClickListener(this);
 
@@ -54,6 +104,8 @@ public class BookingActivity extends AppCompatActivity  implements View.OnClickL
         createBooking();
     }
 
+
+
     private void createBooking() {
         String bookingNo = bookingNoTxt.getText().toString();
         String fromStation = fromStationTxt.getText().toString();
@@ -61,24 +113,17 @@ public class BookingActivity extends AppCompatActivity  implements View.OnClickL
         String trainDate = trainDateTxt.getText().toString();
         String trainTime = trainTimeTxt.getText().toString();
         int trainClass= Integer.parseInt(trainClassTxt.getText().toString());
-        String bookingDate = bookingDateTxt.getText().toString();
+        String bookingDate = bookingDateLbl.getText().toString();
         int noTickets = Integer.parseInt(noTicketsTxt.getText().toString());
         String availability = availabilityLbl.getText().toString();
         int cost = Integer.parseInt(costLbl.getText().toString());
 //
-        int numberOfTickets = Integer.parseInt(noTicketsTxt.getText().toString());
 
-        if(trainClass==1){
-            int costTicket = numberOfTickets * 700 ;
-        }else if(trainClass==2){
-            int costTicket = numberOfTickets * 450;
-        }else{
-            int costTicket = numberOfTickets * 350;
-        }
 
 
 //
 
+//
         CreateBookingRequest createBookingRequest = new CreateBookingRequest(
                 bookingNo, fromStation, toStation, trainDate, trainTime, bookingDate, noTickets, availability,trainClass,cost);
 
