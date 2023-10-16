@@ -40,7 +40,7 @@ public class BookingActivity extends AppCompatActivity  implements View.OnClickL
         trainClassTxt = findViewById(R.id.trainClass);
         availabilityLbl = findViewById(R.id.availability);
         costLbl = findViewById(R.id.cost);
-        btnSubmit = findViewById(R.id.btnSubmit);
+
         btnCheck = findViewById(R.id.btnCheck);
 
         btnSubmit.setOnClickListener(this);
