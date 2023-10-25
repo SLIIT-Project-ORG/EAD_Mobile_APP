@@ -35,7 +35,8 @@
                 android:text="TICKET BOOKING"
                 android:textSize="30dp"
                 app:cornerRadius="20dp"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="40dp"
+                android:id="@+id/ticketBookingBtn">
 
             </com.google.android.material.button.MaterialButton>
 
@@ -47,7 +48,8 @@
                 android:text="TRAIN DETAILS"
                 android:textSize="30dp"
                 app:cornerRadius="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:id="@+id/trainDetailsBtn">
             </com.google.android.material.button.MaterialButton>
 
             <com.google.android.material.button.MaterialButton
@@ -59,7 +61,8 @@
                 android:textSize="30dp"
                 app:cornerRadius="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp">
+                android:layout_marginBottom="30dp"
+                android:id="@+id/userProfileBtn">
             </com.google.android.material.button.MaterialButton>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

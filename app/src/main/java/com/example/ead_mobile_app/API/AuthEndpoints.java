@@ -1,6 +1,7 @@
 package com.example.ead_mobile_app.API;
 
 import com.example.ead_mobile_app.Model.ApplicationUser;
+import com.example.ead_mobile_app.Model.ResponseDto;
 import com.example.ead_mobile_app.Model.UserCreateRequest;
 import com.example.ead_mobile_app.Model.UserCreateResponse;
 import com.example.ead_mobile_app.Model.UserLoginRequest;
@@ -10,6 +11,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface AuthEndpoints {
@@ -20,9 +22,10 @@ public interface AuthEndpoints {
     @POST("/authenticate/login")
     Call<UserLoginResponse> loginUser(@Body UserLoginRequest userLoginRequest);
 
-    @GET("/users/{id}")
+    @GET("/user/{id}")
     Call<ApplicationUser> getUserById(@Path("id") String userId);
 
-
+    @PUT("/user/reactivate/{userId}")
+    Call<ResponseDto> deactivateUser(@Path("userId") String userId);
 
 }
