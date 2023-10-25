@@ -12,28 +12,6 @@
         android:padding="16dp"
         tools:ignore="MissingConstraints">
 
-<!--        <TextView-->
-<!--            android:id="@+id/trainNameTextView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Train Name:"-->
-<!--            android:textSize="18sp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/trainCapacityTextView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Capacity:"-->
-<!--            android:textSize="16sp" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/trainTypeTextView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Type:"-->
-<!--            android:textSize="16sp" />-->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

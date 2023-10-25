@@ -46,43 +46,68 @@
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
                 android:layout_marginBottom="10dp"
-                android:text="Full Name   :    Sachini Rasanga"
+                android:text="Full Name   :"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:id="@+id/userProfileFullName"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/fullNameTextVew"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:layout_marginBottom="10dp"
+                android:text="User Name :"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:id="@+id/userProfileUsername"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/userNameTextView"
                 />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.7"
-                android:layout_marginBottom="10dp"
-                android:text="User Name :    sachinirasanga"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:id="@+id/userProfileUsername"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:alpha="0.7"
-                android:text="Age              :    24"
+                android:text="Age              :"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:id="@+id/userProfileAge"/>
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/ageTextView"
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:alpha="0.7"
-                android:text="Email           :    sachi@gmail.com"
+                android:text="Email           :"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:id="@+id/userProfileEmail"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/emailTextView"
+                />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -94,15 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="10dp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="200dp"
-                android:layout_marginLeft="60dp"
 
-                android:layout_height="60dp"
-                android:text="UPDATE"
-                app:cornerRadius="32dp">
-
-            </com.google.android.material.button.MaterialButton>
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="10dp" />
@@ -111,7 +128,7 @@
                 android:layout_marginLeft="60dp"
                 android:layout_height="60dp"
                 android:text="DEACTIVATE"
-
+                android:id="@+id/deactivateBtn"
                 app:cornerRadius="32dp">
 
             </com.google.android.material.button.MaterialButton>
